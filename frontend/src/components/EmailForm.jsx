@@ -134,9 +134,9 @@ export default function EmailForm() {
                   </div>
                   <div className="risk-bar-track">
                     <div
-                      className="risk-bar-fill"
+                      className="risk-bar-mask"
                       style={{
-                        width: `${Math.max(0, Math.min(1, barScale)) * 100}%`,
+                        width: `${(1 - Math.max(0, Math.min(1, barScale))) * 100}%`,
                       }}
                     />
                   </div>
