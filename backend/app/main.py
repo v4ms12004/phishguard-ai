@@ -37,30 +37,36 @@ async def root():
     return {"status": "ok", "message": "PhishGuard AI API running"}
 
 @app.post("/predict", response_model=PredictionResponse)
-async def predict(request: EmailRequest, http_request: Request):
-    text_parts = [
-        request.subject or "",
-        request.body or "",
-        request.url or "",
-    ]
-    combined_text = "\n".join(text_parts)
+def predict(request: EmailRequest):
+    subject = (request.subject or "").strip()
+    body = (request.body or "").strip()
+    url = (request.url or "").strip()
+
+    combined_text = " ".join(part for part in [subject, body, url] if part).strip()
+
+    # ✅ If there is no content at all, don't run the model
+    if not combined_text:
+        return PredictionResponse(
+            label="legitimate",
+            phishing_probability=0.0,
+            explanation=[
+                "No subject, body, or URL were provided.",
+                "The model was not run; phishing probability is reported as 0.0 by default."
+            ],
+        )
 
     prob = predict_phishing_probability(combined_text)
+
     label = "phishing" if prob >= 0.5 else "legitimate"
 
-    explanation = ["Stub model: probability based on text length only."]
-
-    client_ip = http_request.client.host if http_request.client else None
-    log_prediction(
-        subject=request.subject,
-        url=request.url,
-        label=label,
-        probability=prob,
-        client_ip=client_ip,
-    )
+    explanation = [
+        "Content-based model using TF-IDF features over subject, body, and URL.",
+        "Higher risk for emails with phrases commonly seen in phishing (e.g., verify account, urgent action, password reset).",
+    ]
 
     return PredictionResponse(
         label=label,
         phishing_probability=prob,
         explanation=explanation,
     )
+

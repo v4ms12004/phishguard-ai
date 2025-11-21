@@ -23,20 +23,32 @@ export default function EmailForm() {
     setLoading(true);
     setResult(null);
 
+    const trimmedSubject = subject.trim();
+    const trimmedBody = body.trim();
+    const trimmedUrl = url.trim();
+
+    // ✅ Frontend guard: don’t call API with completely empty content
+    if (!trimmedSubject && !trimmedBody && !trimmedUrl) {
+      setLoading(false);
+      setResult({
+        error: "Please enter a subject, body, or URL before analyzing.",
+      });
+      return;
+    }
+
     try {
       const response = await axios.post(`${API_BASE_URL}/predict`, {
-        subject,
-        body,
-        url,
+        subject: trimmedSubject,
+        body: trimmedBody,
+        url: trimmedUrl,
       });
-
-      setResult(response.data);
+    setResult(response.data);
     } catch (error) {
       console.error(error);
       setResult({ error: "Failed to connect to backend." });
     } finally {
       setLoading(false);
-    }
+      }
   }
 
   const probability =
