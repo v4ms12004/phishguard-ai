@@ -15,7 +15,7 @@ app = FastAPI(title="PhishGuard AI", version="0.1.0")
 # ------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # later: ["https://your-frontend-domain.vercel.app"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
