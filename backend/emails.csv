@@ -1,11 +1,62 @@
-text,label
-"Your account has been suspended. Click here to verify your password immediately.","1"
-"Update your billing information now to avoid service interruption. Login at http://fake-login.com","1"
-"Dear user, we noticed unusual login attempts. Please confirm your identity.","1"
-"Congratulations! You have won a free iPhone. Click the link to claim your prize.","1"
-"Urgent: Your mailbox is almost full. Verify your account to avoid deactivation.","1"
-"Reminder: Your scheduled appointment is tomorrow at 3 PM.","0"
-"Monthly newsletter: Here are your recent account activities and updates.","0"
-"Your order has been shipped and will arrive by Friday. Track your package here.","0"
-"Team meeting rescheduled to next Monday at 10 AM. Please confirm your availability.","0"
-"Invoice for your recent purchase is attached. Thank you for shopping with us.","0"
+subject,body,url,label
+"Urgent: Your account will be closed","We detected suspicious activity in your account. To avoid closure, please verify your account immediately.","http://secure-verify-account.com/login",1
+"Password Reset Required","Your password has expired. Please reset immediately using the link below.","http://reset-password-now.com/security",1
+"Unusual Login Attempt","We noticed an unusual login attempt from a new device. Confirm it was you by signing in through the link below.","http://verify-login-alert.com",1
+"Payment Failed","Your recent payment could not be processed. Update billing information to avoid service interruption.","http://billing-update-center.com",1
+"Confirm Your Identity","Your identity must be verified to continue using our services. Click the link below to confirm.","http://id-confirm-portal.net/verify",1
+"Delivery Issue: Action Needed","We could not deliver your package. Please provide the correct address and pay the reshipping fee.","http://fedex-delivery-fix.com/update",1
+"PayPal Alert: Account Limited","Your PayPal account has been limited due to suspicious activity. Verify your details to restore access.","http://paypal-security-check.info",1
+"Amazon Order Suspended","Your Amazon order has been put on hold. Please verify payment details to complete your purchase.","http://amazon-order-verify.co",1
+"Final Warning: Email Deactivation","Your email account will be permanently removed unless you verify your login today.","http://email-support-verify.org",1
+"Your Tax Refund is Ready","Claim your tax refund immediately by confirming your personal information at the link below.","http://irs-refund-claim.net",1
+"Action Required: Bank Account Verification","Your bank has noticed irregular activity. Verify your account to avoid temporary hold.","http://secure-bank-check.com",1
+"Security Alert: Multiple Failed Logins","We registered multiple failed login attempts. Use the secure link to reset your password.","http://password-reset-center.net",1
+"Verify Your Student Loan Details","Your student loan information is incomplete. Update details to avoid increased interest.","http://student-loan-verify.com",1
+"Office 365 Mailbox Exceeded Limit","Your mailbox storage limit has been exceeded. Log in to increase your storage quota.","http://office365-mailupgrades.com",1
+"Unauthorized Access to Your Cloud Drive","Someone tried accessing your cloud drive from an unknown device. Review activity below.","http://cloud-drive-security-check.com",1
+"University Portal Suspended","Your university portal access will be suspended if you do not revalidate your credentials.","http://university-portal-verify.edu-login.net",1
+"Scholarship Application Incomplete","Your scholarship application is missing required documents. Upload them using the link.","http://scholarship-verify-form.com",1
+"Fake Internship Offer","You have been selected for a paid internship. Provide bank details to receive your first stipend.","http://exclusive-internship-offer.net",1
+"Corporate VPN Password Expiring","Your VPN password will expire today. Reset immediately to maintain remote access.","http://corp-vpn-reset.com",1
+"Payroll Information Update Required","Your payroll details need verification to process this month's salary.","http://hr-payroll-update.net",1
+"Apple ID Locked","Your Apple ID has been locked for security reasons. Restore access by confirming your account.","http://appleid-restore-access.net",1
+"Microsoft Account Closure Notice","Your Microsoft account is scheduled for closure. Cancel this request within 24 hours.","http://microsoft-cancel-closure.com",1
+"Crypto Wallet Withdrawal Alert","A withdrawal request was initiated from your wallet. Cancel it if this was not you.","http://crypto-security-cancel.com",1
+"Social Media Copyright Violation","Your account has been reported for copyright violations. Appeal the decision at the link.","http://copyright-appeal-center.net",1
+"Fake KU IT Support Message","KU IT has detected suspicious activity on your account. Log in to verify your identity.","http://ku-it-support-verify.net",1
+"Document Shared: Please Sign","A confidential document has been shared for your signature. Log in with your email to view it.","http://secure-docsign-now.com",1
+"Suspicious Activity on Your Email","We have blocked new sign-in attempts. Review recent activity and confirm that it was you.","http://email-activity-review.com",1
+"Upgrade to Premium Storage","Your free plan is expiring. Upgrade now by entering your card information.","http://storage-upgrade-offer.net",1
+"Lottery Winning Notification","Congratulations, you have won a prize. Enter your details to claim your reward.","http://claim-lottery-prize-today.com",1
+"Fake Bank Transfer Notice","You have received a large bank transfer. Confirm your account details to receive the funds.","http://secure-transfer-confirmation.net",1
+
+"Meeting Reminder","Just a reminder that our weekly team meeting is tomorrow at 10 AM in Conference Room B.","",0
+"Project Update","Attached is the latest update for Project Falcon. Please review before Friday and send your feedback.","",0
+"Class Announcement","This is a reminder that your assignment for EECS 465 is due on Monday at midnight.","",0
+"Schedule Confirmation","Please confirm your availability for next week's lab sessions so we can finalize the schedule.","",0
+"Receipt for Your Purchase","Thank you for your purchase. Here is your receipt and order details for your records.","",0
+"Team Lunch","We are planning a team lunch this Friday at the Union. Let us know if you can make it.","",0
+"University Event","Join us for the annual engineering networking event at the KU Union Ballroom next Thursday.","",0
+"Exam Review Session","A review session will be held on Thursday for the midterm exam. Bring your questions.","",0
+"Login Notification","A login to your account was detected from your usual device. No action is required.","",0
+"Your Subscription is Active","Your subscription has been successfully renewed for another year. Thank you for staying with us.","",0
+"Lab Reservation Confirmed","Your reservation for the computer lab has been confirmed for Wednesday 2–4 PM.","",0
+"Course Enrollment Successful","You have been successfully enrolled in EECS 658: Introduction to Machine Learning.","",0
+"Invoice for Consulting Services","Attached is the invoice for last month's consulting services. Payment is due in 30 days.","",0
+"Welcome to the Platform","Welcome to our platform! Explore your dashboard to get started and customize your profile.","",0
+"Reminder: Office Hours","Office hours will be held tomorrow from 2–4 PM in Eaton Hall, room 2001.","",0
+"Conference Registration Confirmed","Your registration for the IEEE student conference has been confirmed.","",0
+"Parking Permit Renewal","Your campus parking permit has been renewed successfully. A new sticker will be mailed soon.","",0
+"Research Group Meeting","Our research group meeting will be held on Friday to discuss progress on current projects.","",0
+"Assignment Graded","Your assignment submission has been graded. Check Canvas to view your score and feedback.","",0
+"Welcome Email from HR","Welcome to the company! HR has attached your onboarding schedule and documentation.","",0
+"Travel Itinerary","Your flight itinerary and hotel booking details are attached for your upcoming conference trip.","",0
+"Student Housing Information","This email contains information about move-in dates and housing policies for the semester.","",0
+"Workshop Registration","You are registered for the Python for Data Science workshop next weekend.","",0
+"Newsletter: College of Engineering","Here is this month's newsletter from the School of Engineering with updates and events.","",0
+"Grade Posted for Midterm","Your grade for the midterm exam has been posted. Please check the course portal.","",0
+"Zoom Link for Tomorrow's Class","Here is the Zoom link for tomorrow's remote lecture. Please log in 5 minutes early.","",0
+"Scholarship Award Notification","Congratulations, you have been selected to receive a departmental scholarship for this year.","",0
+"Library Book Due Soon","One or more of your checked-out library books will be due in three days. Please return or renew.","",0
+"Project Presentation Schedule","The final project presentations are scheduled for next Friday. Your assigned time is 2:30 PM.","",0
+"System Maintenance Notice","Our systems will be undergoing scheduled maintenance on Saturday from 1–3 AM. Some services may be unavailable.","",0
