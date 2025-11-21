@@ -51,8 +51,18 @@ function App() {
           </div>
         </main>
         <footer className="app-footer">
-          <span>Built by <strong>Neeraj Vamsi Doddapaneni</strong></span>
-          <span>PhishGuard AI · AI &amp; Cybersecurity</span>
+          <span>
+            Built by 
+            <a 
+              href="https://www.linkedin.com/in/v4ms12004/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: "#e5e7eb", fontWeight: 600, textDecoration: "underline", marginLeft: "6px" }}
+            >
+             Neeraj Vamsi Doddapaneni
+            </a>
+            · AI &amp; Cybersecurity Engineer · University of Kansas
+          </span>
         </footer>
       </div>
     </div>

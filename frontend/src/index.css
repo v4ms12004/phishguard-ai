@@ -284,3 +284,13 @@ body {
   color: #e5e7eb;
   font-weight: 600;
 }
+
+.app-footer a {
+  color: #e2e8f0;
+  transition: color 0.2s ease;
+}
+
+.app-footer a:hover {
+  color: #93c5fd;
+}
+
