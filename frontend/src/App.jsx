@@ -50,6 +50,10 @@ function App() {
             <EmailForm />
           </div>
         </main>
+        <footer className="app-footer">
+          <span>Built by <strong>Neeraj Vamsi Doddapaneni</strong></span>
+          <span>PhishGuard AI · AI &amp; Cybersecurity</span>
+        </footer>
       </div>
     </div>
   );
