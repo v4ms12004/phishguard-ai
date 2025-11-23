@@ -74,7 +74,7 @@ function App() {
                 marginLeft: "6px",
               }}
             >
-              Vamsi Doddapaneni
+              Neeraj Vamsi Doddapaneni
             </a>
             · AI &amp; Cybersecurity Engineer · University of Kansas
           </span>
