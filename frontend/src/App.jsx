@@ -1,11 +1,14 @@
+import { useState } from "react";
 import "./index.css";
 import logo from "./assets/phishguard-logo.png";
 import EmailForm from "./components/EmailForm";
 import AuthPanel from "./components/AuthPanel";
+import ScanHistory from "./components/ScanHistory";
 import { useSupabaseAuth } from "./hooks/useSupabaseAuth";
 
 function App() {
   const { user, authLoading, signIn, signUp, signOut } = useSupabaseAuth();
+  const [selectedScan, setSelectedScan] = useState(null);
 
   return (
     <div className="app-root">
@@ -23,7 +26,12 @@ function App() {
               <img
                 src={logo}
                 alt="PhishGuard AI Logo"
-                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  display: "block",
+                }}
               />
             </div>
             <div>
@@ -37,7 +45,7 @@ function App() {
 
         <main>
           <div className="card">
-            <EmailForm currentUser={user} />
+            <EmailForm currentUser={user} selectedScan={selectedScan} />
           </div>
 
           {!authLoading && (
@@ -48,6 +56,8 @@ function App() {
               onSignOut={signOut}
             />
           )}
+
+          <ScanHistory currentUser={user} onSelectScan={setSelectedScan} />
         </main>
 
         <footer className="app-footer">
@@ -64,7 +74,7 @@ function App() {
                 marginLeft: "6px",
               }}
             >
-              Neeraj Vamsi Doddapaneni
+              Vamsi Doddapaneni
             </a>
             · AI &amp; Cybersecurity Engineer · University of Kansas
           </span>
