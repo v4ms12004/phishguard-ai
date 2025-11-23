@@ -1,11 +1,13 @@
 from pydantic import BaseModel
+from typing import Optional, List
 
 class EmailRequest(BaseModel):
-    subject: str | None = ""
-    body: str
-    url: str | None = ""
+    subject: Optional[str] = ""
+    body: Optional[str] = ""
+    url: Optional[str] = ""
+    user_id: Optional[str] = None  # 👈 add this
 
 class PredictionResponse(BaseModel):
     label: str
     phishing_probability: float
-    explanation: list[str]
+    explanation: Optional[List[str]] = None

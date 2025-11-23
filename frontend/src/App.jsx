@@ -1,40 +1,30 @@
-// frontend/src/App.jsx
-import EmailForm from "./components/EmailForm";
 import "./index.css";
 import logo from "./assets/phishguard-logo.png";
+import EmailForm from "./components/EmailForm";
+import AuthPanel from "./components/AuthPanel";
+import { useSupabaseAuth } from "./hooks/useSupabaseAuth";
 
 function App() {
+  const { user, authLoading, signIn, signUp, signOut } = useSupabaseAuth();
+
   return (
     <div className="app-root">
       <div className="app">
         <header className="app-header">
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", justifyContent: "center" }}>
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "999px",
-                background:
-                  "radial-gradient(circle at 30% 30%, rgba(248,250,252,0.35), rgba(15,23,42,0.2))",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 12px 40px rgba(37,99,235,0.55)",
-              }}
-            >
-             <div style={{ width: 140, height: 140 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1.25rem",
+              justifyContent: "center",
+            }}
+          >
+            <div style={{ width: 90, height: 90 }}>
               <img
                 src={logo}
                 alt="PhishGuard AI Logo"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  display: "block",
-                }}
+                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
               />
-            </div>
-
             </div>
             <div>
               <h1 className="app-title">PhishGuard AI</h1>
@@ -47,19 +37,34 @@ function App() {
 
         <main>
           <div className="card">
-            <EmailForm />
+            <EmailForm currentUser={user} />
           </div>
+
+          {!authLoading && (
+            <AuthPanel
+              user={user}
+              onSignIn={signIn}
+              onSignUp={signUp}
+              onSignOut={signOut}
+            />
+          )}
         </main>
+
         <footer className="app-footer">
           <span>
-            Built by 
-            <a 
-              href="https://www.linkedin.com/in/v4ms12004/" 
-              target="_blank" 
+            Built by
+            <a
+              href="https://www.linkedin.com/in/v4ms12004/"
+              target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#e5e7eb", fontWeight: 600, textDecoration: "underline", marginLeft: "6px" }}
+              style={{
+                color: "#e5e7eb",
+                fontWeight: 600,
+                textDecoration: "underline",
+                marginLeft: "6px",
+              }}
             >
-             Neeraj Vamsi Doddapaneni
+              Vamsi Doddapaneni
             </a>
             · AI &amp; Cybersecurity Engineer · University of Kansas
           </span>

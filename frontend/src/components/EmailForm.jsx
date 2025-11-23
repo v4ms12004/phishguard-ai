@@ -11,7 +11,7 @@ function formatRisk(prob) {
   return "Very Low";
 }
 
-export default function EmailForm() {
+export default function EmailForm({ currentUser }) {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [url, setUrl] = useState("");
@@ -38,9 +38,10 @@ export default function EmailForm() {
 
     try {
       const response = await axios.post(`${API_BASE_URL}/predict`, {
-        subject: trimmedSubject,
-        body: trimmedBody,
-        url: trimmedUrl,
+        subject,
+        body,
+        url,
+        user_id: currentUser ? currentUser.id : null,
       });
     setResult(response.data);
     } catch (error) {
@@ -95,7 +96,7 @@ export default function EmailForm() {
 
         <div className="form-row">
           <label className="label" htmlFor="url">
-            URL (optional)
+            URL
           </label>
           <input
             id="url"
