@@ -5,7 +5,7 @@ PhishGuard AI is a full-stack AI cybersecurity web application that detects phis
 ## Live Demo
 
 Frontend (Vercel):  
-https://phishguard-ai-pi.vercel.app/ 
+https://phishguard-ai-nv.vercel.app/ 
 
 Backend API (Render):  
 https://phishguard-backend-t1rc.onrender.com
